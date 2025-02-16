@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Tweet App
+{% endblock %}
+
+
+
+{% block content %}
+<h1 class=" text-center mt-4" >Welcome to my tweet app</h1>
+
+<a class="btn btn-primary mb-4" href="{% url 'Video_create' %}">Share a video</a>
+<div class="contain row gap-2">
+    {% for video in videos %}
+    <div class="card mb-4 m-auto " style="max-width: 50rem;">
+
+        <video id="videoplayer" src="{{video.video_file.url}}" class="card-img-top" controls ></video>
+        <div class="card-body">
+            <h5 class="card-title">{{video.user.username}}</h5>
+            <p class="card-text">{{video.description}}</p>
+                {% if video.user == user %}
+            <a href="{% url 'video_edit' video.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'video_delete' video.id %}" class="btn btn-danger">Delete</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

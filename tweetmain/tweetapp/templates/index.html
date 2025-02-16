@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Tweet App
+{% endblock %}
+
+
+
+{% block content %}
+<h1 class=" text-center mt-4" >Welcome to my app</h1>
+<h2 class="bg-info w-75 m-auto text-black text-center mt-5 rounded">where are you going on post share / video share </h2>
+<div class="position-absolute mt-4 start-50 translate-middle">
+    <a href="{% url 'tweet_create' %}" class="btn mt-5 btn-primary rounded ">share post</a>
+    <a href="{% url 'Video_create' %}" class="btn mt-5 ms-2 btn-warning rounded">Share Video</a>
+</div>
+{% endblock %}

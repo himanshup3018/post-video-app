@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}
+Tweet App
+{% endblock %}
+{% block content %}
+<h2 class="bg-white text-black text-center p-2 w-50 m-auto">Login form</h2>
+<form method="post" class="bg-secondary p-4 text-black text-center w-50 m-auto">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-success text-black">Login</button>
+</form>
+<p class="text-center">Dont have an account ? <a href="{% url 'register' %}">Register here</a></p>
+{% endblock %}

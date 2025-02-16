@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}
+Tweet App
+{% endblock %}
+{% block content %}
+<h2>Logout </h2>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-primary">Login</button>
+</form>
+<p>You have been logged out <a href="{% url 'login' %}">Login here</a></p>
+{% endblock %}
